@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/SeninAndrey/wearo/issues"
   },
-  "homepage": "https://github.com/SeninAndrey/wearo#readme",
+  "homepage": "https://github.com/SeninAndrey/wearo",
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
