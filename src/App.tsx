@@ -1,20 +1,9 @@
 import React, { useState } from "react";
-import { AddItemComponent } from "./AddItemComponent/AddItemComponent";
-import { ItemCard } from "./ItemCard/ItemCard";
+import { AddItemComponent } from "./AddItemComponent";
+import { ItemCard } from "./ItemCard";
+import { GetListFromStorge } from "./utilities/localStorage";
 
-const GetListFromStorge = () => {
-    const stored = localStorage.getItem('itemsList');
-
-    if (stored === '') return []
-    
-    let itemsListStorage: string[] = [];
-    if (stored != null) {
-        itemsListStorage = stored.split(',');        
-    } 
-    return itemsListStorage;
-}
-
-const App = () => {      
+const App: React.FC = () => {      
     const [itemsList, setItemsList] = useState<string[]>(GetListFromStorge());
 
     const addItem = (item: string) => {
@@ -31,7 +20,7 @@ const App = () => {
 
     return (
         <>
-            <h1 className="text-3xl font-bold text-blue-500 bg-gray-100 p-4 rounded">
+            <h1 className="text-3xl w-full font-bold text-blue-500 bg-gray-100 p-4 mb-5 rounded">
                 Тестовое задание (React + TypeScript)
             </h1>
             <AddItemComponent addItemHandler={addItem}/>
