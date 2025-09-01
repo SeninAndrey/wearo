@@ -21,7 +21,20 @@ module.exports = {
       },
       {
         test: /\.css$/, // если используете css
-        use: ['style-loader', 'css-loader'],
+        use: [
+            'style-loader',
+            'css-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                postcssOptions: {
+                  plugins: [
+                    require('@tailwindcss/postcss')
+                  ],
+                },
+              },
+            },
+          ],
       },
     ],
   },
